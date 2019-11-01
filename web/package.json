@@ -1,0 +1,41 @@
+{
+  "name": "charliekc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon ./bin/www",
+    "test": "mocha --exit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CharlieKC/charliekc.git"
+  },
+  "private": true,
+  "author": "Charlie Kruczko",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CharlieKC/charliekc/issues"
+  },
+  "homepage": "https://github.com/CharlieKC/charliekc#readme",
+  "dependencies": {
+    "aws-sdk": "^2.556.0",
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.4",
+    "debug": "^4.1.1",
+    "ejs": "^2.7.1",
+    "express": "^4.17.1",
+    "http-errors": "^1.7.3",
+    "jade": "^1.11.0",
+    "morgan": "^1.9.1",
+    "multer": "^1.4.2",
+    "multer-s3": "^2.9.0",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.4",
+    "serve-favicon": "^2.5.0"
+  },
+  "devDependencies": {
+    "mocha": "^6.2.1",
+    "supertest": "^4.0.2"
+  }
+}

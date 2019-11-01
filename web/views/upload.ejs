@@ -1,0 +1,12 @@
+<%- include('partials/header') -%>
+
+<h1>This is a page to upload a file to uploadtest</h1>
+
+<!-- Form to upload an image -->
+<form action="/upload" enctype="multipart/form-data" method="post">
+  <input type="file" name="imgToClassify" />
+  <input type="submit" value="Upload your files" />
+</form>
+
+
+<%- include('partials/footer') -%>

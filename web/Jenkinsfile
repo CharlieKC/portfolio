@@ -1,0 +1,30 @@
+pipeline {
+  agent {
+    docker {
+      image 'node:12.12.0-alpine'
+      args '-p "3000:3000"'
+    }
+
+  }
+  stages {
+    stage('build') {
+      steps {
+        sh 'echo List of directory at build stage start:'
+        sh 'ls -a'
+        sh 'npm install'
+      }
+    }
+    stage('test') {
+      steps {
+        sh 'echo List of directory at test stage start:'
+        sh 'ls -a'
+        sh 'npm test'
+      }
+    }
+    stage('run server') {
+      steps {
+        sh 'echo the server runs'
+      }
+    }
+  }
+}
