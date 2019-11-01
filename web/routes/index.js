@@ -32,11 +32,11 @@ router.get('/avatar', (req, res) => {
   res.render('avatar')
 });
 
-router.get('/upload', (req, res) => {
+router.get('/classifier', (req, res) => {
   res.render('upload')
 });
 
-router.post('/upload', upload.single('imgToClassify'), (req, res, next) => {
+router.post('/classifier', upload.single('imgToClassify'), (req, res, next) => {
   const file = req.file;
   if (!file) {
     const error = new Error('Please choose files');

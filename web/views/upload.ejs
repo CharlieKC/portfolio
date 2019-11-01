@@ -1,12 +1,30 @@
 <%- include('partials/header') -%>
 
-<h1>This is a page to upload a file to uploadtest</h1>
+<h1>Classify an image with resnet101</h1>
+
+<p>Select an image to upload that will be classified into ImageNet categories.
+The web server is being run on node, this relays the image to a flask microservice which runs a PyTorch model.</p>
 
 <!-- Form to upload an image -->
-<form action="/upload" enctype="multipart/form-data" method="post">
-  <input type="file" name="imgToClassify" />
-  <input type="submit" value="Upload your files" />
+<!-- <form action="/classifier" enctype="multipart/form-data" method="post">
+    <div class="form-group row">
+      <input type="file" class="form-control file" name="imgToClassify" />
+    </div>
+    <div class="form-group row">
+      <input type="submit" class="form-control" value="Upload your files" />
+    </div>
 </form>
+ -->
+<form class="form" action="/classifier" enctype="multipart/form-data" method="post">
+  <div class="form-group col-4">
+    <label for="uploadFile" class="sr-only">Upload an image to be classified</label>
+    <input type="file" class="form-control file" id="uploadFile" name="imgToClassify"/>
+  </div>
+  <div class="form-group col-4">
+    <button type="submit" class="btn btn-primary mb-2">Classify image</button>
+  </div>
+</form>
+
 
 
 <%- include('partials/footer') -%>
