@@ -3,6 +3,11 @@ var router = express.Router();
 var rp = require("request-promise");
 var fs = require("fs");
 var path = require("path")
+// var md = require('markdown-it');
+var MarkdownIt = require('markdown-it'),
+    md = new MarkdownIt();
+var result = md.render('# markdown-it rulezz!');
+
 // Multer
 var multer = require('multer');
 var storage = multer.diskStorage({
@@ -33,7 +38,20 @@ router.get('/avatar', (req, res) => {
 });
 
 router.get('/classifier', (req, res) => {
-  res.render('upload')
+  fs.readFile('views/docs/classifier.md', 'utf-8', (err, md_file) => {
+    var md_result = md.render(md_file);
+    res.render('upload', {md: md_result});
+  });
+  // res.render('upload', {md: md_result})
+});
+
+router.get('/md', (req, res) => {
+  fs.readFile('views/docs/classifier.md', 'utf-8', (err, md_file) => {
+    var md_result = md.render(md_file);
+    res.render('mdtest', {md: md_result});
+  });
+
+  // res.send(md_result)
 });
 
 router.post('/classifier', upload.single('imgToClassify'), (req, res, next) => {
