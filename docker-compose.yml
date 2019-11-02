@@ -17,3 +17,10 @@ services:
       - ./classifier:/code
     ports:
       - "5001:80"
+  pose:
+    build: ./pose
+    command: python /code/app.py
+    volumes:
+      - ./pose:/code
+    ports:
+      - "5000:80"

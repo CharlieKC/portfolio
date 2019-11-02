@@ -18,7 +18,7 @@ def allowed_file(filename):
 
 @app.route('/')
 def hello():
-    return 'Hello, World!'
+    return 'This is the classifier microservice!'
 
 @app.route('/predict/', methods=['POST'])
 def predict():
