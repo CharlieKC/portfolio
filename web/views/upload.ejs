@@ -5,7 +5,7 @@
 <form class="form" action="/classifier" enctype="multipart/form-data" method="post">
   <div class="form-group col-4">
     <label for="uploadFile" class="sr-only">Upload an image to be classified</label>
-    <input type="file" class="form-control file" id="uploadFile" name="imgToClassify"/>
+    <input type="file" accept=".jpg" class="form-control file" id="uploadFile" name="imgToClassify"/>
   </div>
   <div class="form-group col-4">
     <button type="submit" class="btn btn-primary mb-2">Classify image</button>

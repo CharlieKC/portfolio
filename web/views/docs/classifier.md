@@ -10,3 +10,5 @@ This page makes use of:
   - resnet101, trained on ImageNet using the PyTorch for inferencing the model.
 
 ## Demo:
+
+Upload a `.jpg` to be classified.

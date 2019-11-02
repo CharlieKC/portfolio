@@ -9,6 +9,9 @@ var bodyParser= require('body-parser')
 
 
 var indexRouter = require('./routes/index');
+var classifierRouter = require('./routes/classifier');
+var poseRouter = require('./routes/pose')
+
 
 var app = express();
 
@@ -25,5 +28,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
+app.use('/classifier', classifierRouter)
+app.use('/pose', poseRouter)
+
 
 module.exports = app;
