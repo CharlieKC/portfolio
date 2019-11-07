@@ -1,4 +1,5 @@
 *.pth
+*.mp4
 models/
 .DS_Store
 .env
