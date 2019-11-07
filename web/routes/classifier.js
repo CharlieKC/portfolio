@@ -75,4 +75,11 @@ router.get('/results/:img', (req, res) => {
   });
 });
 
+router.get('/classes', (req, res) => {
+  rp('http://classifier/classes').then(arr => {
+    res.send(arr)
+  });
+})
+
+
 module.exports = router;

@@ -3,6 +3,7 @@ import time
 from werkzeug.utils import secure_filename
 import os
 import classify
+import numpy as np
 
 UPLOAD_FOLDER = 'uploads'
 ALLOWED_EXTENSIONS = {'jpg', 'jpeg', 'png'}
@@ -40,6 +41,10 @@ def predict():
     labels = classify.classify_image(filepath)
     return str(labels)
 
+@app.route('/classes/')
+def class_list():
+    arr = np.load('class_list.pickle', allow_pickle=True)
+    return dict(arr)
 
 
 if __name__ == "__main__":
