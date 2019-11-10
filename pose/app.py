@@ -11,6 +11,11 @@ def hello():
     return 'This is the pose microservice!'
 
 
+# Returns files from the video directory
+@app.route('/video/<filename>')
+def video(filename):
+    return send_from_directory('video', filename)
+
 
 if __name__ == "__main__":
 	app.run(host='0.0.0.0', port=80, debug=True)

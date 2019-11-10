@@ -1,5 +1,5 @@
 const request = require('supertest');
-const app = require('../index.js');
+const app = require('../app.js');
 
 describe('GET /', function() {
   it('Expect response: hello world', function(done){
