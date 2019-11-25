@@ -1,17 +1,12 @@
-var express = require('express');
-var router = express.Router();
-var rp = require('request-promise');
-
+var express = require('express')
+var router = express.Router()
 
 router.get('/', (req, res) => {
-  res.render('index');
+  res.render('index')
 })
 
 router.get('/test', (req, res) => {
-  rp('http://pose/video/climbing.mp4').then(vid =>{
-    res.sendFile(vid)
-  })
+  res.render('test')
 })
 
-
-module.exports = router;
+module.exports = router
