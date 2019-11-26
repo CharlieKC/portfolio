@@ -17,7 +17,8 @@ var getPose = new Promise(function (resolve, reject) {
 
 function setup() {
   img = loadImage('../images/man.jpg', (img) => {
-    createCanvas(img.width, img.height)
+    var canvas = createCanvas(img.width, img.height)
+    canvas.parent('sketch-holder')
   }) // Load the image
 }
 
@@ -34,7 +35,7 @@ function drawPoints (points) {
     if (pos.x > 0 && pos.y > 0) {
       console.log(pos.x)
       console.log(pos.y)
-      circle(pos.x, pos.y, 10)
+      circle(pos.x, pos.y, 8)
     }
   }
 }

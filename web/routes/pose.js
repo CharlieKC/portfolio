@@ -7,16 +7,23 @@ var md = require('markdown-it')();
 
 
 router.get('/', (req, res) => {
-  fs.readFile('views/docs/pose.md', 'utf-8', (err, md_file) => {
-    var md_result = md.render(md_file);
-    res.render('pose', {md: md_result});
-  });
-});
+  fs.readFile('views/docs/pose.md', 'utf-8', (err, mdFile) => {
+    if (err) { console.log(err) }
+    var mdResult = md.render(mdFile)
+    res.render('pose', { md: mdResult })
+  })
+})
 
-router.get('/demo_simple', (req, res) => {
-  res.render('pose_demo');
-});
+router.get('/demo_image', (req, res) => {
+  res.render('pose_image')
+})
 
+router.get('/demo_webcam', (req, res) => {
+  res.render('pose_webcam')
+})
 
+router.get('/demo_sockets', (req, res) => {
+  res.render('sockets')
+})
 
 module.exports = router;
