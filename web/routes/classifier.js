@@ -70,7 +70,7 @@ router.get('/results/:img', (req, res) => {
     .catch(err => {
       console.log(err)
       if (err.name) {
-        res.render('error', { error: err })
+        res.render(err)
       }
     })
 })
