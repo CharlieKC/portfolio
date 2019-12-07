@@ -2,9 +2,12 @@ import torch
 from torchvision import transforms
 from PIL import Image
 import json
+import ssl
+
+ssl._create_default_https_context = ssl._create_unverified_context
 
 # Download model and put into eval mode
-model = torch.hub.load('pytorch/vision', 'resnet101', pretrained=True)
+model = torch.hub.load('pytorch/vision', 'resnet50', pretrained=True)
 # model = torch.load('models/resnet101-5d3b4d8f.pth', 'resnet101')
 model.eval()
 

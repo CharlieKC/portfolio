@@ -1,5 +1,6 @@
-FROM python:3.7.5
+FROM anibali/pytorch:no-cuda
 ENV PYHTONUNBUFFERED 1
+USER root
 RUN mkdir /code
 WORKDIR /code
 
