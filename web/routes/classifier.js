@@ -60,20 +60,20 @@ router.get('/results/:img', (req, res) => {
     },
   };
   rp(options)
-  .then(api_response => {
-    res.render('results', {
-      labels: api_response,
-      img_name: img_name,
-      img_path: img_path,
+    .then(apiResponse => {
+      res.render('results', {
+        labels: apiResponse,
+        img_name: img_name,
+        img_path: img_path
+      })
     })
-  })
-  .catch(err => {
-    console.log(err);
-    if (err.name) {
-      res.render('error')
-    }
-  });
-});
+    .catch(err => {
+      console.log(err)
+      if (err.name) {
+        res.render('error', { error: err })
+      }
+    })
+})
 
 router.get('/classes', (req, res) => {
   rp('http://classifier/classes').then(arr => {
