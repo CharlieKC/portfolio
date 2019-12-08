@@ -29,7 +29,7 @@ chmod +x /usr/local/bin/docker-compose
     stage('compose up') {
       steps {
         sh '''cd web;
-docker .'''
+docker build .'''
       }
     }
 
