@@ -1,10 +1,5 @@
 pipeline {
-  agent {
-    dockerfile {
-      filename 'web/Dockerfile'
-    }
-
-  }
+  agent any
   stages {
     stage('Git pull') {
       parallel {
@@ -28,6 +23,12 @@ sudo chmod +x /usr/local/bin/docker-compose
     stage('List files') {
       steps {
         sh 'ls'
+      }
+    }
+
+    stage('compose up') {
+      steps {
+        sh 'sudo docker-compose up'
       }
     }
 
