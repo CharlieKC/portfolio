@@ -28,7 +28,7 @@ chmod +x /usr/local/bin/docker-compose
 
     stage('compose up') {
       steps {
-        sh 'sudo docker-compose up'
+        sh 'docker-compose up'
       }
     }
 
