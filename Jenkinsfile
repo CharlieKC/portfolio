@@ -16,7 +16,7 @@ pipeline {
     stage('compose up') {
       steps {
         sh '''ls;
-apt install docker-compose;
+apt-get install docker-compose;
 docker-compose up;'''
       }
     }
