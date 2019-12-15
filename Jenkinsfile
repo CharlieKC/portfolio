@@ -29,7 +29,7 @@ chmod +x /usr/local/bin/docker-compose
     stage('compose up') {
       steps {
         sh '''ls;
-docker-compose up;'''
+docker-compose -f ./docker-compose.yml up;'''
       }
     }
 
