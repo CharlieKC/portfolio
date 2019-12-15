@@ -16,7 +16,7 @@ pipeline {
     stage('compose up') {
       steps {
         sh '''ls;
-docker-compose -f ./docker-compose.yml up;'''
+docker-compose up;'''
       }
     }
 
