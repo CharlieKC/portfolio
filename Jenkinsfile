@@ -16,6 +16,9 @@ pipeline {
     stage('compose up') {
       steps {
         sh '''ls;
+which docker-compose;
+rm $(which docker-compose);
+which docker-compose;
 docker-compose up;'''
       }
     }
